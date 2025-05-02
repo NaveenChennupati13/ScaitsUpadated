@@ -1,6 +1,8 @@
 import React from 'react';
 import chaitanyaLogo from '../assets/srichaitanya-png.png';
 import { Link,useLocation} from 'react-router-dom';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faSearch } from '@fortawesome/free-solid-svg-icons';
 
 
 function NavSidebar() {
@@ -18,6 +20,7 @@ function NavSidebar() {
         <input type="text" className="search-box" placeholder="Ask for anything" />
         <div className="nav-user-section">
           <i className="fas fa-bell bell-icon"></i>
+          <FontAwesomeIcon icon={faSearch} className="search-icon" style={{ position: 'absolute', top: '49%', left: '90px', transform: 'translateY(-50%)', color: '#aaa',marginLeft:'180px' }} />
           <div className="user-info">
             <span className="user-location">HYD 256789</span>
             <span className="user-role">Cashier</span>

@@ -1,69 +1,135 @@
-/* Wrapper for the entire campus content */
-.campus-container {
-    margin-left: 220px; /* Leave space for fixed sidebar */
-    margin-top: 70px;   /* Leave space for fixed navbar */
-    padding: 20px;
-    background-color: #f8f9fa;
-  }
+
+
+.head-table-container{
+  margin-left:260px;
   
-  /* Header section inside the campus UI */
-  .campus-header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin-bottom: 20px;
-  }
+  /* margin-top:24px;
+  margin-left:24px; */
+ width:1180px;
+ /* height:823px; */
+ /* margin-top:77px; */
+
+}
+
+
+.inner-container{
+  width:1139px;
+  height:722px;
+  margin-top:24px; 
+  margin-left:24px;
+  /* border:1px solid red;
+   */
+   box-shadow: 0px 2px 0px rgba(0, 0, 0, 0.1);
+  border-radius:8px;
+
+}
+
+.campus-header{
+  height:78px;
+  width:1139px;
+  /* padding:20px ; */
+  box-shadow: 0px 2px 0px rgba(0, 0, 0, 0.1);
+  display:flex;
+  justify-content: space-between;
+
+}
+
+
+.campus-header h2{
+  margin-left:24px;
+}
+
+.campus-controls{
+  margin-top:10px;
+  margin-right:20px;
+
   
-  .campus-header h2 {
-    font-size: 20px;
-    font-weight: bold;
-    color: #333;
-  }
+
+}
+
+
+
+
+.campus-controls button{
+  padding:10px;
+  margin:5px
+}
+
+.filter {
+  background-color: white;
+  border: 1px solid #ccc;
+  position: relative;
+  border-radius:10px;
+  /* height:10px; */
+}
+
+.filter .notification {
+  background-color: red;
+  color: white;
+  border-radius: 50%;
+  padding: 2px 2px;
+  position: absolute;
+  top: -5px;
+  right: -5px;
+  height:12px;
+  width:12px;
+  font-size:10px;
+}
+
+.export {
+  background-color: white;
+  border: 1px solid #ccc;
+  border-radius:10px;
+}
+
+.add-new-field {
+  background-color: blue;
+  color: white;
+  border-radius: 5px;
+  border-radius:10px;
+}
+
+
+
+
+.campus-table-wrapper {
+  overflow-x: auto;
+  background-color: #fff;
   
-  .campus-controls button {
-    margin-left: 10px;
-    padding: 8px 14px;
-    background-color: #2563eb;
-    color: #fff;
-    border: none;
-    border-radius: 4px;
-    cursor: pointer;
-  }
+  /* padding: 10px; */
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.campus-table {
+  border-collapse: collapse;
+  margin-left:15px;
   
-  .campus-controls button:hover {
-    background-color: #1d4ed8;
-  }
   
-  /* Table Scroll Wrapper */
-  .campus-table-wrapper {
-    overflow-x: auto;
-    background-color: #fff;
-    border-radius: 8px;
-    padding: 10px;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-  }
-  
-  /* Table styling */
-  .campus-table {
-    border-collapse: collapse;
-    min-width: 1500px; /* Forces horizontal scroll */
-    width: 100%;
-  }
-  
-  .campus-table th,
-  .campus-table td {
-    border: 1px solid #e0e0e0;
-    padding: 10px 12px;
-    font-size: 14px;
-    text-align: left;
-    white-space: nowrap; /* Prevents wrapping */
-  }
-  
+}
+
+
+
   .campus-table th {
-    background-color: #f1f5f9;
-    font-weight: 600;
+    box-shadow: 0px 2px 0px rgba(0, 0, 0, 0.1); /* no spread */
   }
   
+
+
+.campus-table th,
+.campus-table td {
+  padding: 10px 12px;
+  font-size: 14px;
+  text-align: left;
+  white-space: nowrap; 
+  border: none;
+  border-bottom: 1px solid rgba(101, 99, 99, 0.1); 
+  border-radius: 0; 
+  /* box-shadow: 0px 0.5px 3px 0px rgba(0, 0, 0, 0.3); */
+}
+
+
+
+
   /* Pagination buttons */
   .campus-pagination {
     display: flex;
@@ -83,250 +149,102 @@
   .campus-pagination button:hover {
     background-color: #e0e7ff;
   }
-  .action-btn {
-    background: none;
-    border: none;
-    cursor: pointer;
-    margin: 0 5px;
-    color: #333;
-  }
-  /* Modal Overlay */
-.modal-overlay {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: rgba(0, 0, 0, 0.5);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    z-index: 1000;
-  }
-  
-  /* Modal Content */
-  .modal-content {
-    background: #ffffff;
-    border-radius: 10px;
-    width: 50%;
-    padding: 20px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-    animation: fadeIn 0.3s ease-in-out;
-    position: relative;
-  }
-  
-  @keyframes fadeIn {
-    from {
-      opacity: 0;
-      transform: translateY(-10px);
-    }
-    to {
-      opacity: 1;
-      transform: translateY(0);
-    }
-  }
-  
-  /* Close Button */
-  .close-btn {
-    position: absolute;
-    top: 10px;
-    right: 10px;
-    background: none;
-    border: none;
-    font-size: 20px;
-    cursor: pointer;
-  }
-  
-  /* Form Styling */
-  form {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 15px;
-  }
-  
-  .form-group {
-    display: flex;
-    flex-direction: column;
-  }
-  
-  label {
-    font-size: 14px;
-    font-weight: bold;
-    margin-bottom: 5px;
-  }
-  
-  input {
-    padding: 8px;
-    font-size: 14px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-  }
-  
-  /* Modal Actions */
-  .modal-actions {
-    grid-column: span 3;
+
+
+
+
+  /* pagination */
+  .pagination-container {
     display: flex;
     justify-content: space-between;
-    margin-top: 20px;
+    align-items: center;
+    /* padding: 5px ; */
+    /* padding-top:1px; */
+    /* padding-bottom: 9px; */
+    padding:0;
+    background: white;
+    /* position: fixed;  */
+    /* margin-bottom: 20px; */
+    /* left: 50%; */
+    /* transform: translateX(-50%); */
+    z-index: 1000;
+    width: 1120px;
+    /* border-radius: 10px; */
+    /* box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1); */
+    margin-left: 40px;
+    height:42px;
+   
+   
   }
-  
-  .delete-btn {
-    background: #ff4d4f;
-    color: #ffffff;
-    padding: 10px 20px;
-    border: none;
-    border-radius: 5px;
+ 
+  .pagination-btn {
+    padding: 5px 25px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    background: rgb(253, 251, 251);
+    color: #3a3d41;
+    font-weight: 500;
+    cursor: pointer;
+   
+  }
+ 
+  .pagination-btn:hover {
+    background-color: #f0f0f0;
+  }
+ 
+ 
+  .left-btn{
+    margin-left:28px;
+  }
+ 
+ 
+  .right-btn{
+    margin-right:20px;
+  }
+ 
+  .page-numbers {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+    font-size:12.5px;
+   
+  }
+ 
+  .page {
+    padding: 8px 12px;
+    border-radius: 8px;
+    color: #0970ff;
+    font-weight: 500;
     cursor: pointer;
   }
-  
-  .edit-btn {
-    background: #1890ff;
-    color: #ffffff;
-    padding: 10px 20px;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
+ 
+  .page.active {
+    background-color: #eef2ff;
+    color: #4338ca;
   }
-  
-  /* Hover Effects */
-  .delete-btn:hover {
-    background: #d9363e;
+ 
+  .dots {
+    padding: 8px 12px;
+    color: #999;
   }
-  
-  .edit-btn:hover {
-    background: #1479cc;
-  }
-  .campus-container {
-  padding: 20px;
-}
+ 
+ 
+ 
+ 
 
-.campus-header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  margin-bottom: 20px;
-}
 
-.campus-table-wrapper {
-  overflow-x: auto;
-  margin-bottom: 20px;
-}
 
-.campus-table {
-  width: 100%;
-  border-collapse: collapse;
-}
 
-.campus-table th,
-.campus-table td {
-  border: 1px solid #ddd;
-  padding: 8px;
-  text-align: center;
-}
 
-.campus-table th {
-  background-color: #f4f4f4;
-}
 
-.action-btn {
-  background: none;
-  border: none;
-  cursor: pointer;
-  font-size: 16px;
-}
 
-.modal-overlay {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: rgba(0, 0, 0, 0.8);
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  z-index: 1000;
-}
 
-.modal-content {
-  background: #fff;
-  padding: 20px;
-  border-radius: 8px;
-  max-width: 600px;
-  width: 90%;
-  position: relative;
-}
 
-.close-btn {
-  position: absolute;
-  top: 10px;
-  right: 10px;
-  background: none;
-  border: none;
-  font-size: 18px;
-  cursor: pointer;
-}
 
-h3 {
-  text-align: center;
-  margin-bottom: 20px;
-}
 
-.form-group {
-  margin-bottom: 15px;
-}
 
-.form-group label {
-  display: block;
-  margin-bottom: 5px;
-  font-weight: bold;
-}
 
-.form-group input {
-  width: 100%;
-  padding: 8px;
-  border: 1px solid #ddd;
-  border-radius: 4px;
-}
 
-.modal-actions {
-  display: flex;
-  justify-content: space-between;
-  margin-top: 20px;
-}
 
-.delete-btn {
-  background: #ff4d4d;
-  color: white;
-  border: none;
-  padding: 10px 20px;
-  border-radius: 4px;
-  cursor: pointer;
-}
 
-.edit-btn {
-  background: #4d79ff;
-  color: white;
-  border: none;
-  padding: 10px 20px;
-  border-radius: 4px;
-  cursor: pointer;
-}
 
-.nav-sidebar {
-  position: fixed;
-  top: 0;
-  left: 0;
-  height: 100%;
-  width: 240px;
-  background-color: #fff;
-  z-index: 100;
-  padding-top: 20px;
-}
-
-.campus-container {
-  margin-left: 240px;
-}
-
-  
-  
